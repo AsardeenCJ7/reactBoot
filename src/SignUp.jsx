@@ -3,7 +3,7 @@ import React, { useState } from "react";
 export default function SignUp() {
   const [pwd1, setPwd1] = useState("");
   const [pwd2, setPwd2] = useState("");
-  const [check, setCheck] = useState(false);
+  const [check, setCheck] = useState(true);
 
   function handleOnchangePwd1(event) {
     setPwd1(event.target.value);
@@ -93,7 +93,7 @@ export default function SignUp() {
           </label>
         </div>
         {/* {check ? <p>Password match</p> : <p>Password Does not match</p>}  or */}
-        {check && <p>Password Match</p>}
+        {/* {check && <p>Password Match</p>} */}
         {!check && <p>Password Does not Match</p>}
         <button type="submit" className="btn btn-primary">
           Submit
@@ -102,3 +102,5 @@ export default function SignUp() {
     </>
   );
 }
+
+//  npm install react-router-dom

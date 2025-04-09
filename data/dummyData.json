@@ -1,0 +1,34 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Getting Started with React",
+      "content": "This post explains how to get started with React from scratch.",
+      "createdAt": "2024-10-01T10:00:00Z"
+    },
+    {
+      "id": 2,
+      "title": "Understanding JavaScript Closures",
+      "content": "Closures are a powerful feature in JavaScript that lets you preserve state.",
+      "createdAt": "2024-10-03T15:45:00Z"
+    },
+    {
+      "id": 3,
+      "title": "CSS Flexbox vs Grid",
+      "content": "In this post, we compare CSS Flexbox and Grid layout systems.",
+      "createdAt": "2024-10-05T08:30:00Z"
+    },
+    {
+      "id": 4,
+      "title": "Mastering HTML Forms",
+      "content": "Learn how to build and validate HTML forms effectively.",
+      "createdAt": "2024-10-07T12:00:00Z"
+    },
+    {
+      "id": 5,
+      "title": "Node.js for Beginners",
+      "content": "A beginner-friendly guide to understanding and using Node.js.",
+      "createdAt": "2024-10-08T09:20:00Z"
+    }
+  ]
+}
