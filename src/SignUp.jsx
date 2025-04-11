@@ -1,6 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import Counter from "./Counter";
+import { dataContext } from "./Home";
 
 export default function SignUp() {
+  const dataSignUp = useContext(dataContext);
+
   const [pwd1, setPwd1] = useState("");
   const [pwd2, setPwd2] = useState("");
   const [check, setCheck] = useState(true);
@@ -37,6 +41,8 @@ export default function SignUp() {
 
   return (
     <>
+      {/* <Counter value={dataSignUp} /> */}
+      <h2>{dataSignUp}</h2>
       <form
         className="my-5"
         style={{
@@ -99,6 +105,7 @@ export default function SignUp() {
           Submit
         </button>
       </form>
+      {/* <h2>{dataSignUp}</h2> */}
     </>
   );
 }

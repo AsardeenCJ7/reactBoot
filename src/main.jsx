@@ -7,6 +7,7 @@ import Counter from "./Counter.jsx";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import NotFound from "./NotFound.jsx";
+import Post from "./Post.jsx";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,12 @@ const router = createBrowserRouter([
   {
     path: "/count",
     element: <Counter />,
+  },
+
+  {
+    path: "/post/:id",
+    element: <Post />,
+    // this means dynmaic path
   },
 ]);
 

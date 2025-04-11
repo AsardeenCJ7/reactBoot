@@ -1,9 +1,18 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState, createContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import SignUp from "./SignUp";
+import Counter from "./Counter";
+// import { createContext, useContext } from "react";
+
+export const dataContext = createContext();
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
   const [error, setError] = useState([]);
+
+  const navigate = useNavigate();
+
+  const dataHome = "DataHome-Parent";
 
   useEffect(() => {
     const controller = new AbortController();
@@ -36,8 +45,15 @@ export default function Home() {
 
   return (
     <>
+      {/* <SignUp value={data} /> useContext hooks before I learned */}
+      <dataContext.Provider value={dataHome}>
+        {/* <SignUp />
+        <Counter /> */}
+      </dataContext.Provider>
+
+      {/*  */}
       <div className="container">
-        <Link to="/Login">LogIn</Link>
+        {/* <Link to="/Login">LogIn</Link> */}
         <div className="row justify-content-center m-3">
           {posts &&
             posts.map((post) => {
@@ -46,10 +62,13 @@ export default function Home() {
                   key={post.id}
                   className="card m-3"
                   style={{ width: "18rem" }}
+                  onClick={() => {
+                    navigate("/post/" + post.id);
+                  }} // this is not good in react onclick method passing values because its work as method calling so we neend array method
                 >
                   <div className="card-body">
                     <h5 className="card-title">{post.title}</h5>
-                    <p className="card-text">{post.content}</p>
+                    {/* <p className="card-text">{post.content}</p> */}
                   </div>
                 </div>
               );
